@@ -61,4 +61,8 @@ void RenderWindow::display() {
   SDL_RenderPresent(renderer);
 }
 
+void RenderWindow::windowColor(int r, int g, int b, int a) {
+  SDL_SetRenderDrawColor(renderer, r, g, b, a);
+}
+
 // Restart pc soon...

@@ -18,6 +18,7 @@ class RenderWindow {
     void clear();
     void render(Entity& p_entity);
     void display();
+    void windowColor(int r, int g, int b, int a);
 
   private:
     // Get the address of the window and renderer.

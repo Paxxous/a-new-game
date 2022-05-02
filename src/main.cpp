@@ -16,7 +16,7 @@ int main( /* (for cross platform stuff) */ int argc, char* argv[]) {
   RenderWindow window("BEst", 1280, 720);
 
   // Create a grass texture
-  SDL_Texture* brodyTexture = window.loadTexture("../res/gfx/brdoy.png");
+  SDL_Texture* brodyTexture = window.loadTexture(/* A .. so the user can still run the game from their file explorer */"../res/gfx/brdoy.png");
   Entity brody(0, 0, brodyTexture);
 
   // Create an event object
@@ -32,6 +32,7 @@ int main( /* (for cross platform stuff) */ int argc, char* argv[]) {
       }
 
       window.clear();
+      window.windowColor(255, 255, 255, 255);
       window.render(brody);
       window.display();
 
