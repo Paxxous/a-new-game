@@ -7,7 +7,7 @@ I'm gonna revamp that one C++ game, I'm coding it on windows this time, since I 
 First copy the source through git:
 
 ```sh
-git clone <insert the repo http here>
+git clone https://github.com/Paxxous/a-new-game.git
 ```
 
 Then, compile the code via the makefile:
