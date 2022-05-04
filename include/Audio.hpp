@@ -4,10 +4,14 @@
 #include <SDL2/SDL_audio.h>
 #include <iostream>
 
-#include "audio.cpp"
 
-class Audio {
+class Music {
   public:
-    Audio(const char* audioPath);
+    Music(const char* audioPath);
+
+    // Functionality to the Music object
+    void play(int loop);
+
   private:
+    Mix_Music* theMusic;
 };

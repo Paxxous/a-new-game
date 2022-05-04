@@ -1,9 +1,10 @@
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_mixer.h>
 #include <iostream>
+#include <SDL2/SDL_mixer.h>
 
 #include "renderWindow.hpp"
 #include "Entity.hpp"
+#include "Audio.hpp"
 
 
 
@@ -14,6 +15,17 @@ int main( /* (for cross platform stuff) */ int argc, char* argv[]) {
   if (SDL_Init(SDL_INIT_EVERYTHING)) {
     std::cout << "You got yourself a problem there homie...\n" << SDL_GetError() << "\n"; 
   }
+
+  // Initialize the music 44100, MIX_DEFAULT_FORMAT, 2, 2048
+  if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
+    std::cout << "SDL_mixer could not initialize D:\n" << Mix_GetError() << "\n";
+  }
+
+
+  // Init the background music
+  Music brodyBackgroundMusic("res/sfx/brodyquest.wav");
+  brodyBackgroundMusic.play(-1);
+
 
   // Create a window
   RenderWindow window("BEst", 1280, 720);
